@@ -1,0 +1,48 @@
+{
+  "name": "chakra-ui-confirm",
+  "version": "0.1.0",
+  "description": "Chakra UI confirmation dialogs",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxidragon/chakra-ui-confirm.git"
+  },
+  "keywords": [
+    "chakra-ui"
+  ],
+  "author": "Maksymilian Gala",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/maxidragon/chakra-ui-confirm/issues"
+  },
+  "homepage": "https://github.com/maxidragon/chakra-ui-confirm#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1",
+    "rollup": "^4.18.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
