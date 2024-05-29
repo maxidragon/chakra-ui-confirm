@@ -26,7 +26,7 @@ export const ConfirmDialog: FC<ConfirmDialogProps> = ({
             {title}
           </AlertDialogHeader>
 
-          <AlertDialogBody>{description ?? "Are you sure?"}</AlertDialogBody>
+          <AlertDialogBody>{description}</AlertDialogBody>
 
           <AlertDialogFooter>
             <Button onClick={onCancel}>Cancel</Button>
