@@ -24,13 +24,13 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ tsconfig: "./tsconfig.json", declaration: true, declarationDir: "dist" }),
       terser(),
     ],
     external: ["react", "react-dom"],
   },
   {
-    input: "dist/esm/types/index.d.ts",
+    input: "dist/esm/index.d.ts",
     output: [{ file: "dist/types.d.ts", format: "es" }],
     plugins: [dts()]
   },
