@@ -1,7 +1,7 @@
 {
   "name": "chakra-ui-confirm",
   "version": "0.1.4",
-  "description": "Chakra UI confirmation dialogs",
+  "description": "Chakra UI v3 confirmation dialogs",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
