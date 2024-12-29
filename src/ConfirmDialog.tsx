@@ -1,41 +1,53 @@
-import { AlertDialog, AlertDialogOverlay, AlertDialogContent, AlertDialogHeader, AlertDialogBody, AlertDialogFooter, Button } from "@chakra-ui/react";
-import React, { FC, useRef } from "react";
+import { Button } from "./components/ui/button"
+import {
+  DialogBody,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogRoot,
+  DialogTitle,
+} from "./components/ui/dialog"
+
+import React, {
+  FC,
+} from "react";
 
 interface ConfirmDialogProps {
-  title: string;
+  title?: string;
   description?: string;
   onConfirm: () => void;
   onCancel: () => void;
+  confirmColor?: string;
 }
 
 export const ConfirmDialog: FC<ConfirmDialogProps> = ({
-  title,
+  title = "Are you sure?",
   description,
   onConfirm,
   onCancel,
+  confirmColor = "red.500"
 }) => {
   return (
-    <AlertDialog
-      isOpen={true}
-      onClose={onCancel}
-      leastDestructiveRef={useRef(null)}
+    <DialogRoot
+      open={true}
+      placement="center"
+      onEscapeKeyDown={onCancel}
+      onInteractOutside={onCancel}
     >
-      <AlertDialogOverlay>
-        <AlertDialogContent backgroundColor="gray.700" color="white">
-          <AlertDialogHeader fontSize="lg" fontWeight="bold">
+      <DialogContent>
+        <DialogHeader fontSize="lg" fontWeight="bold">
+          <DialogTitle>
             {title}
-          </AlertDialogHeader>
-
-          <AlertDialogBody>{description}</AlertDialogBody>
-
-          <AlertDialogFooter>
-            <Button onClick={onCancel}>Cancel</Button>
-            <Button colorScheme="red" onClick={onConfirm} ml={3}>
-              Confirm
-            </Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialogOverlay>
-    </AlertDialog>
+          </DialogTitle>
+        </DialogHeader>
+        <DialogBody>{description}</DialogBody>
+        <DialogFooter>
+          <Button onClick={onCancel}>Cancel</Button>
+          <Button backgroundColor={confirmColor} onClick={onConfirm} ml={3}>
+            Confirm
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </DialogRoot>
   );
 };
